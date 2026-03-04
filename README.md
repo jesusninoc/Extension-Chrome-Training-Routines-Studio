@@ -1,110 +1,110 @@
 # Training Routines Studio
 
-Extensión de Chrome en formato **side panel** para cargar, visualizar y gestionar rutinas de entrenamiento desde un fichero JSON remoto.
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-green)
+![Side Panel](https://img.shields.io/badge/UI-Side%20Panel-purple)
+![JSON](https://img.shields.io/badge/Datos-JSON-orange)
+![Estado](https://img.shields.io/badge/Estado-Listo%20para%20probar-brightgreen)
 
-La extensión está pensada como una demo visual y práctica: abre un panel lateral moderno dentro de Chrome, lee las rutinas, organiza los ejercicios por día de la semana, permite marcar progreso, guardar favoritos y mantener un historial local de actividad.
+> Extensión de Chrome en formato **side panel** para cargar, visualizar y gestionar **rutinas de entrenamiento** desde un JSON remoto, con una interfaz moderna, progreso diario, favoritos, historial local y exportación.
+
+---
+
+## Vista general
+
+**Training Routines Studio** está pensada como una extensión visual, práctica y lista para usar. Lee automáticamente un fichero JSON de rutinas, organiza los ejercicios por día de la semana y permite trabajar con ellos desde un panel lateral cómodo y limpio dentro de Chrome.
+
+Está diseñada para que se vea **más cuidada que un prototipo básico**, con una presentación tipo dashboard y una experiencia rápida, clara y útil desde el primer momento.
 
 ---
 
 ## Qué hace
 
-- Carga rutinas desde un JSON remoto (por defecto: `https://www.jesusninoc.com/rutinas2.json`)
-- Muestra los ejercicios agrupados por **día de la semana**
-- Clasifica cada ejercicio por **grupo muscular**
-- Incluye un **selector semanal** para cambiar de día rápidamente
-- Permite **buscar ejercicios** por nombre
-- Permite **filtrar por grupo muscular**
-- Permite mostrar **solo favoritos**
-- Permite marcar ejercicios como **completados**
-- Guarda el progreso en **`chrome.storage.local`**
-- Mantiene un **historial local** de actividad reciente
-- Genera un **reto rápido** automático a partir del día seleccionado
-- Permite **exportar en TXT** la rutina visible del día
-- Incluye una **copia de respaldo local** si el JSON remoto no responde
+### Gestión de rutinas
 
----
-
-## Enfoque del proyecto
-
-La idea es ofrecer una extensión que se vea cuidada y útil desde el primer momento, no un prototipo tosco. Por eso se ha planteado con:
-
-- interfaz compacta y moderna
-- estética tipo dashboard “premium”
-- panel lateral cómodo para trabajar mientras navegas
-- interacción rápida sin menús innecesarios
-- persistencia local para que el progreso no se pierda al cerrar Chrome
-
-Encaja muy bien como:
-
-- demo educativa
-- prueba de concepto visual
-- base para un entrenador personal simple
-- ejemplo de consumo de JSON en extensiones Chrome
-- proyecto de aula para trabajar **Chrome Extensions + JavaScript + almacenamiento local**
-
----
-
-## Estructura del proyecto
+- Carga rutinas desde un JSON remoto
+- Usa por defecto esta fuente:
 
 ```text
-training_routines_extension/
-├── manifest.json
-├── background.js
-├── sidepanel.html
-├── sidepanel.css
-├── sidepanel.js
-└── README.md
+https://www.jesusninoc.com/rutinas2.json
 ```
 
-### Archivos principales
+- Muestra los ejercicios agrupados por **día de la semana**
+- Interpreta cada ejercicio por **grupo muscular**
+- Permite cambiar de día con un **selector semanal**
+- Incluye una **copia local de respaldo** si el JSON remoto falla
 
-#### `manifest.json`
-Define la extensión en **Manifest V3** y configura:
+### Interacción y seguimiento
 
-- permisos básicos
-- apertura del panel lateral
-- acceso al dominio del JSON
-- service worker de fondo
+- Buscar ejercicios por nombre
+- Filtrar por grupo muscular
+- Mostrar solo favoritos
+- Marcar ejercicios como completados
+- Guardar el estado localmente con `chrome.storage.local`
+- Mantener historial de actividad reciente
+- Generar un **reto rápido** del día
+- Exportar en **TXT** la rutina visible
 
-#### `background.js`
-Hace que el panel lateral se abra al pulsar el icono de la extensión.
+### Enfoque visual
 
-#### `sidepanel.html`
-Estructura visual del panel lateral:
-
-- cabecera principal
-- tarjetas de métricas
-- controles de filtrado
-- selector de días
-- reto rápido
-- listado de ejercicios
-- historial
-
-#### `sidepanel.css`
-Contiene todo el diseño visual:
-
-- fondo con degradados
-- estilo tipo cristal / glass UI
-- tarjetas modernas
-- chips, botones y paneles con aspecto compacto
-- diseño responsive dentro del side panel
-
-#### `sidepanel.js`
-Es el núcleo de la extensión. Se encarga de:
-
-- leer el JSON remoto
-- normalizar los datos
-- generar el selector semanal
-- filtrar ejercicios
-- gestionar favoritos
-- guardar completados
-- crear el historial local
-- exportar la rutina visible
-- cargar una copia local si falla la carga remota
+- Interfaz compacta y moderna
+- Estética tipo **dashboard premium**
+- Panel lateral cómodo para usar mientras navegas
+- Diseño más llamativo y limpio que una demo simple
 
 ---
 
-## Cómo instalar la extensión
+## Por qué queda bien para demos y clases
+
+Esta extensión encaja muy bien como ejemplo de:
+
+- consumo de JSON en una extensión real
+- uso de **Chrome Extensions + JavaScript + almacenamiento local**
+- diseño visual cuidado en herramientas pequeñas
+- pruebas de concepto educativas
+- base para una mini app fitness o un panel personal de seguimiento
+
+También sirve muy bien para sorprender en una demo porque combina:
+
+- utilidad real
+- interfaz agradable
+- persistencia local
+- estructura clara y fácil de ampliar
+
+---
+
+## Funcionalidades destacadas
+
+### Panel lateral tipo app
+
+La extensión se abre como **side panel** y mantiene la experiencia dentro de Chrome sin tener que depender de un popup pequeño y limitado.
+
+### Progreso diario
+
+Cada día muestra su lista de ejercicios y permite marcar los que ya has realizado. Ese estado se refleja en el progreso visible de la sesión.
+
+### Favoritos
+
+Puedes guardar ejercicios frecuentes para localizarlos más rápido.
+
+### Historial local
+
+Las acciones importantes quedan guardadas localmente para mantener contexto entre sesiones.
+
+### Exportación
+
+La rutina visible del día puede descargarse en un `.txt`, útil para:
+
+- guardar la sesión
+- compartir una clase
+- preparar una práctica
+- reutilizar la rutina fuera de la extensión
+
+---
+
+## Instalación
+
+### Opción recomendada: modo desarrollador
 
 1. Descarga o descomprime la carpeta del proyecto.
 2. Abre Chrome.
@@ -122,17 +122,22 @@ Después de eso, al pulsar el icono de la extensión, se abrirá el panel latera
 
 ---
 
-## Cómo usarla
+## Uso
 
-### 1. Cargar las rutinas
-Nada más abrirla, la extensión intenta cargar automáticamente el JSON configurado.
+### 1. Abrir la extensión
 
-Si el fichero remoto responde, mostrará las rutinas reales.
+Pulsa el icono de la extensión para abrir el panel lateral.
 
-Si no responde o falla la lectura, la extensión usa una **copia de respaldo** integrada para que el panel siga funcionando.
+### 2. Cargar rutinas
 
-### 2. Cambiar de día
-Pulsa cualquiera de los botones de la semana:
+La extensión intenta cargar automáticamente el JSON configurado.
+
+- Si el recurso remoto responde, verás las rutinas reales.
+- Si falla, se utilizará la copia de respaldo local.
+
+### 3. Cambiar de día
+
+Puedes moverte por los días de la semana desde el selector:
 
 - Lun
 - Mar
@@ -142,52 +147,49 @@ Pulsa cualquiera de los botones de la semana:
 - Sáb
 - Dom
 
-Cada día muestra sus ejercicios correspondientes.
+### 4. Buscar y filtrar
 
-### 3. Buscar o filtrar
-Puedes:
+El panel permite:
 
-- escribir en la caja de búsqueda
+- buscar por texto
 - filtrar por grupo muscular
-- activar “solo favoritos”
+- mostrar solo favoritos
 
-Así reduces la lista a lo que te interesa en cada momento.
+### 5. Marcar progreso
 
-### 4. Marcar favoritos
-Pulsa la estrella de un ejercicio para guardarlo como favorito.
+Puedes marcar ejercicios como realizados para llevar un seguimiento diario.
 
-### 5. Marcar completados
-Pulsa el botón de completar para indicar que ese ejercicio ya se ha realizado.
+### 6. Exportar la sesión
 
-Esto actualiza:
-
-- el progreso visual del día
-- el porcentaje circular
-- el historial local
-
-### 6. Exportar la rutina
-Pulsa **Exportar día** para descargar un fichero `.txt` con la rutina actualmente visible.
-
-Es útil para:
-
-- compartir una sesión
-- guardar una clase
-- documentar una práctica
-- preparar una sesión de entrenamiento rápida
+Pulsa **Exportar día** para descargar el contenido visible de la jornada actual.
 
 ---
 
-## Fuente de datos
-
-La extensión viene configurada para leer por defecto este recurso:
+## Estructura del proyecto
 
 ```text
-https://www.jesusninoc.com/rutinas2.json
+training_routines_extension/
+├── manifest.json
+├── background.js
+├── sidepanel.html
+├── sidepanel.css
+├── sidepanel.js
+└── README.md
 ```
 
-El panel permite cambiar la URL del JSON desde la propia interfaz, de modo que la misma extensión se puede reutilizar con otras colecciones de rutinas si mantienen una estructura compatible.
+### Descripción rápida de archivos
 
-Formato esperado por elemento:
+- **manifest.json**: define la extensión en **Manifest V3** y sus permisos.
+- **background.js**: abre el side panel al pulsar el icono.
+- **sidepanel.html**: estructura visual principal.
+- **sidepanel.css**: diseño del panel, tarjetas, filtros y bloques visuales.
+- **sidepanel.js**: lógica de carga, filtrado, progreso, favoritos, historial y exportación.
+
+---
+
+## Fuente de datos y formato
+
+La extensión está preparada para leer un JSON con una estructura simple como esta:
 
 ```json
 {
@@ -197,17 +199,13 @@ Formato esperado por elemento:
 }
 ```
 
-### Significado de los campos
+### Significado de campos
 
 - `dia`: día de la semana (1 a 7)
 - `tipo`: grupo muscular
 - `rutina`: nombre del ejercicio
 
----
-
-## Grupos musculares usados
-
-La extensión interpreta los grupos de esta forma:
+### Grupos musculares interpretados
 
 - `1`: Full body
 - `2`: Pierna
@@ -219,125 +217,130 @@ La extensión interpreta los grupos de esta forma:
 - `8`: Antebrazo
 - `9`: Abdominales
 
-Cada grupo se representa con un icono para que la interfaz resulte más visual.
-
 ---
 
 ## Almacenamiento local
 
-La extensión usa **`chrome.storage.local`** para conservar:
+La extensión usa **`chrome.storage.local`** para guardar:
 
 - día seleccionado
-- búsqueda actual
+- término de búsqueda
 - filtro activo
 - favoritos
-- ejercicios completados
+- completados
 - historial de actividad
-- última fuente usada
-- última carga realizada
+- fuente JSON usada
+- último estado de carga
 
-Esto permite cerrar Chrome y volver después sin perder el estado de trabajo.
+Esto permite cerrar Chrome y continuar después sin perder el contexto de uso.
 
 ---
 
 ## Permisos utilizados
 
 ### `storage`
-Se usa para guardar el estado local de la extensión.
+
+Guarda el estado local de la extensión.
 
 ### `sidePanel`
-Se usa para mostrar la interfaz como panel lateral de Chrome.
 
-### `host_permissions` sobre `https://www.jesusninoc.com/*`
-Se usa para leer el JSON remoto configurado por defecto.
+Permite mostrar la interfaz como panel lateral.
 
----
+### `host_permissions: <all_urls>`
 
-## Características visuales destacadas
-
-La extensión se ha diseñado con una presentación más cuidada de lo habitual para este tipo de proyectos:
-
-- cabecera visual con doble acción
-- tarjetas de métricas
-- anillo de progreso
-- filtros compactos
-- selector semanal claro
-- panel de reto rápido
-- tarjetas de ejercicios con iconos
-- historial integrado
-
-Esto hace que el proyecto quede bien en:
-
-- una demo en clase
-- una presentación técnica
-- una práctica de alumno
-- una prueba de concepto para ampliar después
+Permite leer la fuente JSON por defecto y otras fuentes compatibles si cambias la URL desde el panel.
 
 ---
 
-## Limitaciones actuales
+## Lo más llamativo de esta extensión
 
-Esta primera versión está pensada para ser simple, visual y útil, así que conviene tener presentes algunos límites:
-
-- no sincroniza con servicios externos
-- no calcula series, pesos o tiempos reales de entrenamiento
-- no gestiona varios usuarios
-- no edita el JSON remoto
-- depende de que el JSON mantenga una estructura compatible
-
-Aun así, como base visual para evolucionar, es muy sólida.
+✅ Interfaz visual cuidada  
+✅ Carga remota con respaldo local  
+✅ Progreso diario  
+✅ Favoritos y filtros  
+✅ Historial persistente  
+✅ Exportación rápida  
+✅ Side panel cómodo y moderno  
 
 ---
 
-## Ideas para una versión futura
+## Limitaciones
 
-Si quieres llevarla más lejos, estas mejoras encajan muy bien:
+Conviene tener en cuenta lo siguiente:
 
-- edición manual de rutinas desde la propia extensión
-- múltiples perfiles de usuario
+- depende de que el JSON remoto tenga una estructura compatible
+- si la fuente externa cambia mucho, puede requerir adaptar el parser
+- no sustituye una app fitness completa ni una base de datos real
+- está pensada como solución rápida, visual y práctica
+
+---
+
+## Mejoras futuras
+
+Ideas que encajan muy bien en siguientes versiones:
+
 - temporizador por ejercicio
-- cronómetro integrado
-- generación automática de sesiones aleatorias
-- importación de otros JSON
-- exportación a CSV o PDF
+- contador de descanso
+- sonido o avisos visuales
 - estadísticas semanales
-- integración con un servidor local en Python
-- modo “rutina del aula” para demos educativas
+- exportación a CSV
+- varios perfiles de usuario
+- importación de distintas fuentes JSON
+- versión aún más visual tipo app fitness avanzada
 
 ---
 
-## Uso recomendado en demos y formación
+## Ideal para
 
-Esta extensión es especialmente útil para enseñar:
-
-- consumo de datos JSON en navegador
-- estructura de una extensión Chrome Manifest V3
-- side panel en Chrome
-- manipulación del DOM
-- renderizado dinámico con JavaScript
-- almacenamiento local con `chrome.storage`
-- diseño de interfaces compactas y visuales
-
-Por eso funciona muy bien como ejemplo de proyecto “listo para enseñar” y también como base para que alumnos la modifiquen.
-
----
-
-## Resumen
-
-**Training Routines Studio** es una extensión Chrome visual, práctica y fácil de probar que convierte un JSON de rutinas en un panel lateral útil y atractivo.
-
-No se limita a listar ejercicios: organiza la semana, guarda progreso, permite filtrar, exportar y mantener un historial local, todo con una interfaz pensada para que el resultado se vea serio y llamativo.
-
-Si quieres una versión siguiente, una evolución natural sería añadir:
-
-- temporizador
-- gráficos de progreso
-- rutinas por usuario
-- importación/exportación avanzada
-- integración con backend
+- demos educativas
+- proyectos de aula
+- pruebas de concepto
+- ejemplos de extensiones Chrome con datos externos
+- paneles personales de rutinas
+- enseñar UI + JSON + almacenamiento local en un único proyecto
 
 ---
 
 ## Licencia
 
-Puedes usarla como base educativa, demo técnica o punto de partida para tus propias ampliaciones.
+Puedes añadir la licencia que prefieras, por ejemplo:
+
+- MIT
+- Apache 2.0
+- uso educativo interno
+
+Ejemplo:
+
+```text
+MIT License
+```
+
+---
+
+## Autor
+
+Aquí puedes poner tu nombre, tu web o tu perfil profesional.
+
+Ejemplo:
+
+- Autor: Tu nombre
+- Web: `https://tusitio.com`
+- LinkedIn: `https://linkedin.com/in/tuusuario`
+
+---
+
+## Resumen rápido
+
+**Training Routines Studio** es una extensión de Chrome con **panel lateral** que permite cargar y gestionar rutinas de entrenamiento desde un JSON remoto con una experiencia visual más cuidada de lo habitual.
+
+Combina:
+
+- lectura de datos externos
+- organización por días
+- filtros y favoritos
+- progreso diario
+- historial local
+- exportación rápida
+- interfaz moderna y compacta
+
+Si buscas una extensión que se vea bien, funcione rápido y además sirva como demo potente para enseñar Chrome Extensions, esta base encaja muy bien.
