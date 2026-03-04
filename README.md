@@ -301,31 +301,10 @@ Ideas que encajan muy bien en siguientes versiones:
 
 ---
 
-## Licencia
-
-Puedes añadir la licencia que prefieras, por ejemplo:
-
-- MIT
-- Apache 2.0
-- uso educativo interno
-
-Ejemplo:
-
-```text
-MIT License
-```
-
----
-
 ## Autor
 
-Aquí puedes poner tu nombre, tu web o tu perfil profesional.
-
-Ejemplo:
-
-- Autor: Tu nombre
-- Web: `https://tusitio.com`
-- LinkedIn: `https://linkedin.com/in/tuusuario`
+- Autor: Jesusninoc
+- Web: `https://jesusninoc.com`
 
 ---
 
