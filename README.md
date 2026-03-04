@@ -322,4 +322,4 @@ Combina:
 - exportación rápida
 - interfaz moderna y compacta
 
-Si buscas una extensión que se vea bien, funcione rápido y además sirva como demo potente para enseñar Chrome Extensions, esta base encaja muy bien.
+Si buscas una extensión que se vea bien, responda con agilidad y además te sirva como una demostración sólida para enseñar cómo se construyen las Chrome Extensions, esta base encaja especialmente bien. No solo ofrece una apariencia cuidada y fácil de presentar, sino que también permite mostrar de forma práctica una estructura clara, un funcionamiento fluido y una experiencia de uso convincente, algo muy útil cuando quieres enseñar un proyecto que entre por los ojos y, al mismo tiempo, resulte sencillo de entender y probar.
