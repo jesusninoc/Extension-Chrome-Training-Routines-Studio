@@ -304,7 +304,7 @@ Ideas que encajan muy bien en siguientes versiones:
 ## Autor
 
 - Autor: Jesusninoc
-- Web: `https://jesusninoc.com`
+- Web: [`https://jesusninoc.com`](https://jesusninoc.com)
 
 ---
 
