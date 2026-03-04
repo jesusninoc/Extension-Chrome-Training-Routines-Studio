@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Training Routines Studio",
+  "version": "1.0.0",
+  "description": "Panel lateral visual para cargar rutinas de entrenamiento desde JSON, organizar por día, marcar progreso y guardar historial.",
+  "permissions": [
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Training Routines Studio"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}

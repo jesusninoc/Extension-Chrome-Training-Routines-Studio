@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Training Routines Studio</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero card glass">
+      <div class="hero-copy">
+        <p class="eyebrow">Extensión Chrome · Side panel</p>
+        <h1>Training Routines Studio</h1>
+        <p class="hero-text">Carga rutinas desde JSON, organiza la semana, marca ejercicios como completados y guarda tu historial local.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="reloadBtn" class="primary">Recargar JSON</button>
+        <button id="exportBtn" class="ghost">Exportar día</button>
+      </div>
+    </header>
+
+    <section class="control-grid">
+      <div class="card glass stat-card">
+        <span class="label">Ejercicios totales</span>
+        <strong id="totalExercises">0</strong>
+        <span class="tiny" id="loadInfo">Esperando datos…</span>
+      </div>
+      <div class="card glass stat-card">
+        <span class="label">Rutina del día</span>
+        <strong id="todayCount">0</strong>
+        <span class="tiny" id="todayLabel">Sin calcular</span>
+      </div>
+      <div class="card glass stat-card progress-card">
+        <span class="label">Progreso del día</span>
+        <div class="progress-wrap">
+          <div class="progress-ring">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="46" class="track"></circle>
+              <circle cx="60" cy="60" r="46" class="value" id="progressRing"></circle>
+            </svg>
+            <span id="progressPercent">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card glass controls">
+      <div class="field">
+        <label for="sourceInput">Origen JSON</label>
+        <input id="sourceInput" type="url" value="https://www.jesusninoc.com/rutinas2.json">
+      </div>
+      <div class="row split">
+        <div class="field grow">
+          <label for="searchInput">Buscar ejercicio</label>
+          <input id="searchInput" type="text" placeholder="Ej.: sentadilla, remo, rueda...">
+        </div>
+        <div class="field">
+          <label for="groupFilter">Grupo muscular</label>
+          <select id="groupFilter"></select>
+        </div>
+      </div>
+      <div class="row bottom-row">
+        <label class="checkbox-pill"><input id="favoriteOnly" type="checkbox"> <span>Solo favoritos</span></label>
+        <button id="resetDayBtn" class="ghost small">Reiniciar día</button>
+      </div>
+      <div id="status" class="status idle">Listo para cargar las rutinas.</div>
+    </section>
+
+    <section class="card glass">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Semana</p>
+          <h2>Selector de día</h2>
+        </div>
+        <span id="daySummary" class="pill">0 ejercicios</span>
+      </div>
+      <div id="dayTabs" class="day-tabs"></div>
+    </section>
+
+    <section class="card glass">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Destacado</p>
+          <h2>Reto rápido</h2>
+        </div>
+        <button id="randomBtn" class="ghost small">Otro reto</button>
+      </div>
+      <div id="challengeCard" class="challenge-card"></div>
+    </section>
+
+    <section class="card glass">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Panel principal</p>
+          <h2>Ejercicios del día seleccionado</h2>
+        </div>
+        <span id="completionText" class="pill pill-accent">0 completados</span>
+      </div>
+      <div id="routineList" class="routine-list"></div>
+    </section>
+
+    <section class="card glass">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Memoria local</p>
+          <h2>Actividad reciente</h2>
+        </div>
+        <button id="clearHistoryBtn" class="ghost small">Borrar historial</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
